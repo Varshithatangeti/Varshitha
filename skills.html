@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #021027;
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+            min-height: 100vh; /* Ensure full height of viewport */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease;
+            z-index: 1;
+            animation: fadeIn 1.5s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: rgb(193, 3, 107);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 5em 1em;
+            animation: fadeIn 2s ease;
+            text-align: center; /* Centers text */
+        }
+
+        .skills-title {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: rgb(193, 3, 107);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1em;
+            margin-top: 2em;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1em;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3em; /* Icon size */
+            margin-bottom: 0.5em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none; /* Hide the navbar on smaller screens */
+            }
+            nav ul.show {
+                display: flex; /* Show the navbar when toggled */
+            }
+        }
+
+        body {
+            background-image: url('images.jpeg'); /* Path to your background image */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Skills Container -->
+    <div class="container">
+        <h1 class="skills-title">My Skills</h1>
+        <p>
+            As a web developer and MERN stack trainee, I have developed a diverse set of skills that I continually work to improve. Below are some of the technologies and tools I am proficient in:
+        </p>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-html5 skill-icon"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt skill-icon"></i>
+                <h3>CSS3</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js skill-icon"></i>
+                <h3>JavaScript</h3>
+            </div>
+            
+            <div class="skill-card">
+                <i class="fab fa-node skill-icon"></i>
+                <h3>Node.js</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server skill-icon"></i>
+                <h3>Express.js</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database skill-icon"></i>
+                <h3>MongoDB</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt skill-icon"></i>
+                <h3>Responsive Design</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-robot skill-icon"></i>
+                <h3>Machine Learning</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python skill-icon"></i> <!-- Python Icon -->
+                <h3>Python</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

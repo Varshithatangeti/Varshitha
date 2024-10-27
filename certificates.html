@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #021027;
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('images.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            animation: fadeIn 1.5s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: rgb(193, 3, 107);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 5em 1em;
+            animation: fadeIn 2s ease;
+            text-align: center;
+        }
+
+        .certificates-title {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: rgb(193, 3, 107);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5em;
+            margin-top: 2em;
+        }
+
+        .certificate-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5em;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-title {
+            font-size: 1.5em;
+            margin-top: 0.5em;
+        }
+
+        .certificate-description {
+            margin-top: 0.5em;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        .certificate-link {
+            margin-top: 1em;
+            display: inline-block;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 3, 107);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Certificates Container -->
+    <div class="container">
+        <h1 class="certificates-title">My Certificates</h1>
+        <p>Here are some of the certificates I have received, showcasing my accomplishments and skills.</p>
+        
+        <div class="certificates-grid">
+            <div class="certificate-card">
+                <h3 class="certificate-title">PYTHON-INFOSYS SPRINGBOARD</h3>
+                <p class="certificate-description">Awarded for completing the basics of python</p>
+                <a href="1-d366b3b1-a3c7-49b3-a5b3-59e4b4d141e9 (1).pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <h3 class="certificate-title">MACHICNE LEARNING-INFOSYS SPRINGBOARD</h3>
+                <p class="certificate-description">Awarded for completing the Machine learning with go</p>
+                <a href="1-043647a6-c3cd-4cca-961d-0f1cf513e0a4.pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <h3 class="certificate-title">SIMPLI LEARN</h3>
+                <p class="certificate-description">Awarded for completing the fundamentals of python.</p>
+                <a href="python.pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <h3 class="certificate-title">Machine Learning Certification</h3>
+                <p class="certificate-description">Certification for completing the FOUNDATIONS OF MODERN MACHINE LEARNIN course conducted by IIIT Hyderabad</p>
+                <a href="ml.jpg" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <h3 class="certificate-title">APSSDC</h3>
+                <p class="certificate-description">Certification for completing the 6-week internship in Artificial intelligence and machine learning leveraging IBM skill build platform</p>
+                <a href="APSSDC PD 2001-4102-1619 (1).pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <h3 class="certificate-title">SWECHA</h3>
+                <p class="certificate-description">Certification for Participation in SUMMER OF AI INTERNSHIP PROGRAM conducted by IIIT Hyderabad</p>
+                <a href="Certificates_For_Cohort_1 (1).pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

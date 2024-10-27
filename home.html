@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #021027; /* Changed to match the background animation */
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Fade-in effect for the entire page */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95); /* Slight zoom out effect */
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); /* Normal scale */
+            }
+        }
+
+        /* Navbar at the top */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease; /* Smooth hide/show effect */
+            z-index: 1;
+            animation: fadeIn 1.5s ease; /* Navbar fade-in */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: rgb(193, 3, 107);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            color: rgb(193, 3, 107);
+        }
+
+        /* Menu Button (Hamburger Icon) */
+        .menu-btn {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: rgb(193, 3, 107);
+            background: none;
+            border: none;
+            display: none;
+            z-index: 2;
+        }
+
+        /* Styles for when the menu is open */
+        .menu-open {
+            display: block;
+            position: fixed;
+            top: 50px;
+            right: 0;
+            background: white;
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Hide the navbar when scrolling down */
+        nav.hide {
+            top: -100px;
+        }
+
+        /* Main Content */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 3em 1em;
+            margin-top: 100px;
+            background: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease; /* Main container fade-in */
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('images.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+        .name-pink {
+            color: rgb(193, 3, 107);
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        .name {
+            color: rgb(193, 3, 107);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        .name-black {
+            color: white;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        main p {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Background Animation */
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            mix-blend-mode: screen;
+            opacity: 0.7;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(100vh) translateX(0);
+            }
+            100% {
+                transform: translateY(-100vh) translateX(calc(var(--x) * 1vw));
+            }
+        }
+
+        /* Circle animations */
+        .circle {
+            animation: move 10s linear infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.menu-open {
+                display: flex;
+            }
+
+            nav .menu-btn {
+                display: block;
+            }
+
+            main {
+                padding: 2em 1em;
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            main p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Button (Hidden initially, visible when scrolling down) -->
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- Navbar positioned at the top -->
+    <nav id="navbar">
+        <ul>
+            
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Container for background animation -->
+    <div class="container">
+        <div id="circles"></div>
+        <main id="content">
+            <h1>
+                <span class="name-pink"><b>VARSHITHA</b></span>
+                <span class="name-black"> <b>TANGETI</b></span>
+            </h1>
+            <p>
+                <span class="name">WEB DEVELOPER</span>
+                <span>Creating interactive features that enhance user engagement &</span>
+                <span class="name">MERN STACK TRAINEE</span>
+            </p>
+        </main>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        const menuBtn = document.getElementById('menuBtn');
+        const circlesContainer = document.getElementById('circles');
+
+        // Function to create circles with random size and position
+        function createCircles() {
+            const particleNum = 100; // Number of circles
+            for (let i = 0; i < particleNum; i++) {
+                const circle = document.createElement('div');
+                circle.className = 'circle';
+                const size = Math.random() * 30 + 10; // Random size between 10px and 40px
+                circle.style.width = `${size}px`;
+                circle.style.height = `${size}px`;
+                circle.style.setProperty('--x', Math.random() * 2 - 1); // Random X direction
+                circle.style.left = `${Math.random() * 100}vw`;
+                circle.style.animationDelay = `${Math.random() * 10}s`; // Random delay
+                circlesContainer.appendChild(circle);
+            }
+        }
+
+        createCircles(); // Initialize circles
+
+        function toggleMenu() {
+            // Toggle the navbar visibility when the menu button is clicked
+            navbar.classList.toggle('menu-open');
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If scrolling down, hide navbar and show menu button
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add('hide');
+                menuBtn.style.display = 'block';
+            } else {
+                // Scrolling up, show the navbar and hide menu button
+                navbar.classList.remove('hide');
+                menuBtn.style.display = 'none';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile compatibility
+        });
+
+        function loadPage(page) {
+            // This function can be used to load different content based on the menu selection
+            const content = document.getElementById('content');
+            content.innerHTML = `<h2>${page.charAt(0).toUpperCase() + page.slice(1)}</h2><p>This is the ${page} section.</p>`;
+        }
+    </script>
+</body>
+</html>

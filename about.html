@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #021027;
+            color: #333;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Centers the content vertically */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease;
+            z-index: 1;
+            animation: fadeIn 1.5s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: rgb(193, 3, 107);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Container and Circle Styles for Bubble Animation */
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-container {
+            max-width: 600px;
+            padding: 5em 1em;
+            color: white;
+            animation: fadeIn 2s ease;
+            text-align: center; /* Centers text */
+        }
+
+        .about-container h1 {
+            color: rgb(193, 3, 107);
+            font-size: 2em;
+        }
+
+        .about-container p {
+            margin: 1em 0;
+            line-height: 1.5;
+        }
+
+        /* Email Link Styles */
+        .contact-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5em;
+            color: rgb(193, 3, 107);
+            font-weight: bold;
+            margin-top: 2em;
+        }
+
+        .contact-section a {
+            color: rgb(193, 3, 107);
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Optional icon style */
+        .contact-icon {
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none; /* Hide the navbar on smaller screens */
+            }
+            nav ul.show {
+                display: flex; /* Show the navbar when toggled */
+            }
+        }
+
+        body {
+            background-image: url('images.jpeg'); /* Path to your background image */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container for background animation -->
+    <div class="container">
+        <div class="about-container">
+            <h1>About Me</h1>
+            <p>
+                Hello! I'm <span style="color: rgb(193, 3, 107); font-weight: bold;">Varshitha Tangeti</span>, an enthusiastic web developer and MERN stack trainee.
+                Passionate about creating interactive and engaging web experiences, I have a strong foundation in HTML, CSS, JavaScript, React, and Express.
+                I enjoy bringing ideas to life in the browser and continuously expanding my knowledge in modern web technologies.
+            </p>
+            <p>
+                My journey as a developer is driven by a desire to build applications that positively impact users' lives. Whether I'm working on a personal
+                project or contributing to a larger team effort, I approach each challenge with creativity and determination.
+            </p>
+            <p>
+                Outside of coding, I enjoy participating in hackathons, solving coding problems, and expanding my knowledge in artificial intelligence and data
+                science. I’m preparing for the GATE exam in Data Science and Artificial Intelligence.
+            </p>
+
+           
+           
+        </div>
+    </div>
+
+</body>
+</html>
