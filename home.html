@@ -4,211 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portfolio</title>
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #021027; /* Changed to match the background animation */
-            color: #333;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        /* Fade-in effect for the entire page */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.95); /* Slight zoom out effect */
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1); /* Normal scale */
-            }
-        }
-
-        /* Navbar at the top */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            color: #333;
-            padding: 1em 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: top 0.3s ease; /* Smooth hide/show effect */
-            z-index: 1;
-            animation: fadeIn 1.5s ease; /* Navbar fade-in */
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 1em;
-        }
-
-        nav ul li a {
-            color: rgb(193, 3, 107);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        nav ul li a:hover {
-            color: rgb(193, 3, 107);
-        }
-
-        /* Menu Button (Hamburger Icon) */
-        .menu-btn {
-            position: fixed;
-            top: 1em;
-            right: 1em;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: rgb(193, 3, 107);
-            background: none;
-            border: none;
-            display: none;
-            z-index: 2;
-        }
-
-        /* Styles for when the menu is open */
-        .menu-open {
-            display: block;
-            position: fixed;
-            top: 50px;
-            right: 0;
-            background: white;
-            width: 100%;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        /* Hide the navbar when scrolling down */
-        nav.hide {
-            top: -100px;
-        }
-
-        /* Main Content */
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 80vh;
-            padding: 3em 1em;
-            margin-top: 100px;
-            background: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s ease; /* Main container fade-in */
-        }
-        body {
+body {
     font-family: Arial, sans-serif;
-    background-image: url('images.jpeg'); /* Path to your background image */
-    background-size: cover; /* Cover the entire area */
-    background-position: center; /* Center the image */
-    color: #333;
+    background-color: black; /* Black background */
+    color: white;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    background-image: url('images.jpeg'); /* Optional background image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fade-in Effect for the Page */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgb(193, 3, 107); /* Pink shadow */
+    transition: top 0.3s ease;
+    z-index: 10;
+    animation: fadeIn 1.5s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: rgb(193, 3, 107); /* Pink color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color:rgb(193, 3, 107);
+}
+
+/* Menu Button (Hamburger Icon) */
+.menu-btn {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: rgb(193, 3, 107);
+    background: none;
+    border: none;
+    display: none;
+    z-index: 15;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.menu-open {
+        display: flex;
+        background: black;
+        padding: 1em 0;
+        box-shadow: 0 4px 10px rgb(193, 3, 107); /* Pink shadow */
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    margin-top: 100px;
+    animation: fadeIn 2s ease;
+    padding: 2em 1em;
+    border-radius: 8px;
+    text-align: center;
+}
+
+main h1, main p {
+    color: white;
+}
+
+main .name-pink {
+    color: rgb(193, 3, 107);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+/* Background Animation */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(250, 243, 246); /* Pink circles */
+    opacity: 0.7;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(100vh) translateX(0);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(calc(var(--x) * 1vw));
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 1.8rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+}
+
+/* Scroll Hide Navbar */
+nav.hide {
+    top: -100px;
+}
+.name-pink {
+    color:rgb(193, 3, 107); /* Pink color */
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.name-black {
+    color: white; /* White color for contrast */
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.name {
+    color: rgb(193, 3, 107); /* Pink color */
+    font-weight: bold;
+}
+
+main p {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+main span {
+    display: inline-block;
 }
 
 
-        .name-pink {
-            color: rgb(193, 3, 107);
-            font-weight: bold;
-            font-size: 3rem;
-        }
-
-        .name {
-            color: rgb(193, 3, 107);
-            font-weight: bold;
-            margin-top: 3px;
-        }
-
-        .name-black {
-            color: white;
-            font-weight: bold;
-            font-size: 3rem;
-        }
-
-        main p {
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Background Animation */
-        .container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6);
-            mix-blend-mode: screen;
-            opacity: 0.7;
-        }
-
-        @keyframes move {
-            0% {
-                transform: translateY(100vh) translateX(0);
-            }
-            100% {
-                transform: translateY(-100vh) translateX(calc(var(--x) * 1vw));
-            }
-        }
-
-        /* Circle animations */
-        .circle {
-            animation: move 10s linear infinite;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                display: none;
-            }
-
-            nav ul.menu-open {
-                display: flex;
-            }
-
-            nav .menu-btn {
-                display: block;
-            }
-
-            main {
-                padding: 2em 1em;
-            }
-
-            nav ul li {
-                margin: 0.5em 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
-
-            main p {
-                font-size: 1em;
-            }
-        }
     </style>
+    
 </head>
 <body>
     <!-- Menu Button (Hidden initially, visible when scrolling down) -->
@@ -296,6 +289,7 @@
             const content = document.getElementById('content');
             content.innerHTML = `<h2>${page.charAt(0).toUpperCase() + page.slice(1)}</h2><p>This is the ${page} section.</p>`;
         }
+        
     </script>
 </body>
 </html>
