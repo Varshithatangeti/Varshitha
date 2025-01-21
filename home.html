@@ -289,7 +289,11 @@ main span {
             const content = document.getElementById('content');
             content.innerHTML = `<h2>${page.charAt(0).toUpperCase() + page.slice(1)}</h2><p>This is the ${page} section.</p>`;
         }
-        
+        function toggleMenu() {
+        const navList = navbar.querySelector('ul'); // Target the <ul> inside the navbar
+        navList.classList.toggle('menu-open'); // Toggle the 'menu-open' class on the <ul>
+}
+
     </script>
 </body>
 </html>

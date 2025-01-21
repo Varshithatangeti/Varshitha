@@ -21,6 +21,9 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            background-image: url('images.jpeg');
+            background-size: cover;
+            background-position: center;
         }
 
         @keyframes fadeIn {
@@ -56,6 +59,43 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
+        }
+
+        /* Menu Button (Hamburger Icon) */
+        .menu-btn {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: rgb(193, 3, 107);
+            background: none;
+            border: none;
+            display: none;
+            z-index: 15;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none; /* Hide the navbar on smaller screens */
+            }
+
+            nav ul.menu-open {
+                display: flex; /* Show the navbar when toggled */
+                background: black;
+                padding: 1em 0;
+                box-shadow: 0 4px 10px rgb(193, 3, 107); /* Pink shadow */
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
         }
 
         .container {
@@ -152,8 +192,13 @@
 </head>
 <body>
 
+    <!-- Menu Button (Hidden initially, visible when scrolling down) -->
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        ☰
+    </div>
+
     <!-- Navbar -->
-    <nav>
+    <nav id="navbar">
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -196,6 +241,13 @@
     <footer>
         &copy; 2024 VARSHITHA. All rights reserved.
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('nav ul');
+            navList.classList.toggle('menu-open');
+        }
+    </script>
 
 </body>
 </html>

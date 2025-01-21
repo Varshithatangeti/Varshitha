@@ -42,9 +42,13 @@
             padding: 1em 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: top 0.3s ease;
+            transition: top 0.3s ease, padding 0.3s ease;
             z-index: 1;
             animation: fadeIn 1.5s ease;
+        }
+
+        nav.small {
+            padding: 0.5em 0; /* Decrease padding when menu is open */
         }
 
         nav ul {
@@ -62,6 +66,20 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
+        }
+
+        /* Menu Button (Hamburger Icon) */
+        .menu-btn {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: rgb(193, 3, 107);
+            background: none;
+            border: none;
+            display: none;
+            z-index: 15;
         }
 
         /* Container and Circle Styles for Bubble Animation */
@@ -124,8 +142,14 @@
                 flex-direction: column;
                 display: none; /* Hide the navbar on smaller screens */
             }
-            nav ul.show {
+            nav ul.menu-open {
                 display: flex; /* Show the navbar when toggled */
+                background: black;
+                padding: 1em 0;
+                box-shadow: 0 4px 10px rgb(193, 3, 107); /* Pink shadow */
+            }
+            .menu-btn {
+                display: block;
             }
         }
 
@@ -138,9 +162,14 @@
 </head>
 <body>
 
+    <!-- Menu Button (Hidden initially, visible when scrolling down) -->
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        ☰
+    </div>
+
     <!-- Navbar -->
-    <nav>
-        <ul>
+    <nav id="navbar">
+        <ul id="navList">
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
@@ -166,11 +195,17 @@
             <p>
                 Outside of coding, I love exploring the world of UI/UX design with a passion for creating user-friendly interfaces.
             </p>
-
-           
-           
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.getElementById('navList');
+            const navbar = document.getElementById('navbar');
+            navList.classList.toggle('menu-open');
+            navbar.classList.toggle('small');
+        }
+    </script>
 
 </body>
 </html>
